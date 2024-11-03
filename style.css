@@ -1,0 +1,510 @@
+/* ---------RESETS--------- */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-family: "Monsterrat", sans-serif;
+    font-size: 1.6rem;
+    overflow-x: hidden;
+    line-height: 1.4;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+time {
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+/* FOR REMOVING THE BLANK SPACE ON THE SIDE  */
+@media screen and (max-width: 1024px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+}
+
+
+
+/*------------CONTAINER/GRID-------------*/
+.container{
+max-width: 120rem;
+margin: 0 auto;
+padding: 1rem 1.5rem;
+}
+
+/* COLORS  */
+:root {
+    --lightYellow: #F6DB81;
+    --midYellow: #B7A97D;
+    --grey: #787878;
+    --darkGrey: #666666;
+    --lightGrey: #B2B2B2;
+    --darkYellow: #BB8E14;
+    --brightYellow: #F3A10F;
+    --dark: #191919;
+    --light: #ffffff;
+    }
+
+/* BUTTON CSS */
+.btn{
+    padding: 1rem 1.5rem;
+    display: inline-block;
+    font-size:1.5rem;
+    border-radius: 20px;
+} 
+
+.darkBlue{
+    color: var(--light);
+    background-color: var(--darkBlue);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 2px solid transparent;
+    transition: .5s ease-in;
+}
+
+.darkBlue:hover{
+    background-color: var(--light);
+    color: var(--darkBlue);
+    border: 2px solid var(--darkBlue);
+    transition: .5s ease-in;
+}
+
+
+
+/* ===== HEADER ===== */
+.header{
+    background: linear-gradient(to top, var(--lightYellow) 0%, var(--midYellow) 50%, var(--grey) 100%);
+    position: relative;
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-branding img{
+    width: 10rem;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.header-nav li a{
+    font-size: 2rem;
+    color: var(--light);
+}
+
+.toggle__menu{
+    display: none;
+}
+
+
+@media screen and (max-width: 500px) {
+    .header-branding img{
+        width: 5rem;
+    }
+    
+    .header-nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        background-color: var(--darkYellow);
+
+        position: absolute;
+        top: 8.5rem;
+        right: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: .5s ease;
+    }
+
+    .header-nav.open{
+        max-height: 50rem;
+        transition: .5s ease;
+    }
+
+    .header-nav li:last-child{
+        margin-bottom: 2rem;
+    }
+
+    .toggle__menu span{
+        width: 2.5rem;
+        height: .2rem;
+        display: block;
+        margin-top: .3rem;
+        border-radius: 5rem;
+        transition: .5s ease;
+        background-color: var(--light);
+    }
+
+    .toggle__menu{
+        display: block;
+    }
+
+    .toggle__menu.open span:first-child{
+        transform: translate(0, 10px) rotate(225deg);
+        transition: .5s ease;
+    }
+
+    .toggle__menu.open span:nth-child(2){
+        opacity: 0;
+        transition: .5s ease;
+    }
+
+    .toggle__menu.open span:last-child{
+        transform: translate(0, -1px) rotate(-225deg);
+        transition: .5s ease;
+    }
+
+    .toggle__menu:hover{
+        cursor: pointer;
+    }
+
+}
+
+
+/* ===== BANNER SECTION ===== */
+.banner{
+    background: linear-gradient(225deg, var(--lightYellow) 0%, var(--midYellow) 50%, var(--grey) 100%);
+    padding: 15rem 0;
+}
+
+.banner h2{
+    font-size: 7rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--light);
+    text-shadow: 3px 3px 3px #888;
+    width: 50rem;
+}
+
+.banner-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.banner-cards{
+    padding: 2rem;
+    width: 25rem;
+    border: 1px solid var(--light);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.banner-cards img{
+    width: 10rem;
+    margin-bottom: 2rem;
+}
+
+.banner-cards h3{
+    font-size: 2.5rem;
+    color: var(--light);
+    font-weight: 700;
+    text-align: left;
+}
+
+@media screen and (max-width: 500px) {
+    .banner{
+        padding: 5rem 0;
+    }
+
+    .banner h2{
+        font-size: 5rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .banner-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+    }
+    
+    .banner-cards{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+
+/* ===== ABOUT SECTION ===== */
+.about{
+    padding: 5rem 0;
+}
+
+.about-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+.about-1-text{
+    width: 90rem;
+}
+
+.about-1-title{
+    margin-bottom: 5rem;
+}
+
+.about-1-title h4{
+    color: var(--brightYellow);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.about-1-title h3{
+    color: var(--dark);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.about-1-desc{
+    color: var(--dark);
+    text-align: justify;
+}
+
+.about-1-img img{
+    width: 100%;
+}
+
+.about-2{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    gap: 3rem;
+}
+
+.about-cards{
+    position: relative; /* Allows positioning of the overlay */
+    overflow: hidden; /* Ensures overlay stays within the card */
+    transition: transform 0.3s; /* Smooth hover effect */
+    padding: 5rem;
+    width: 60rem;
+    height: 40rem;
+    
+    background-image: url('./img/mission-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-cards::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Initial gray overlay */
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.about-cards:hover::before {
+    background-color: rgba(242, 161, 15, .8);
+}
+
+.about-cards-content {
+    position: relative; /* Stacks above the overlay */
+    z-index: 2; /* Ensures the text stays on top */
+}
+
+.about-cards-title{
+    margin-bottom: 5rem;
+}
+
+.about-cards-title h3{
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.about-cards-title h4{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.about-cards ul li{
+    color: var(--light);
+    font-size: 1.6rem;
+    list-style-type: disc;
+    margin-bottom: 1rem;
+}
+
+
+
+@media screen and (max-width: 500px){
+    .about-1{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    
+    .about-1-text{
+        width: 100%;
+    }
+    
+    .about-1-title{
+        margin-bottom: 5rem;
+    }
+    
+    .about-1-title h4{
+        text-align: center;
+    }
+    
+    .about-1-title h3{
+        text-align: center;
+        font-size: 3.5rem;
+    }
+
+    .about-2{
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .about-cards{
+        padding: 3rem;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .about-cards-title h3{
+        font-size: 3.5rem;
+    }
+
+}
+
+
+/* ===== SERVICE SECTION ===== */
