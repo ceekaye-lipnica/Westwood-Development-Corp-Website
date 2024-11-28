@@ -574,11 +574,26 @@ padding: 1rem 1.5rem;
     font-size: 1.7rem;
     color: var(--light);
     list-style-type: disc;
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 
 .service-img img{
     height: 39.5rem;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+
+    .service-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .service-text{
+        padding: 6rem;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
@@ -721,6 +736,35 @@ padding: 1rem 1.5rem;
     width: 60rem;
     height: 35rem;
     object-fit: cover;
+}
+
+
+@media screen and (max-width: 500px){
+
+    .clients-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .clients-text h2{
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .clients-text p{
+        width: 100%;
+        text-align: justify;
+    }
+    
+    .clients-content{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
 }
 
 
@@ -882,6 +926,24 @@ textarea {
         text-align: center;
     }
 
+    .contact-details-info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-details-card{
+        width: 100%;
+        height: 30rem;
+    }
+    
+    .contact-details-text-details h3{
+        font-size: 3rem;
+    }
+    
+    .contact-details-text-details p{
+        width: 100%;
+    }
+
 }
 
 
@@ -978,6 +1040,34 @@ textarea {
     background-color: #BB8E14;
 }
 
+@media screen and (max-width: 500px) {
+    
+    .links-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .links-top img{
+        width: 35rem;
+    }
+
+    .links-top p{
+        width: 100%;
+    }
+
+    .links-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        gap: 2rem;
+    }
+
+}
+
+
 
 /* ===== FOOTER SECTION ===== */
 .footer{
@@ -1010,4 +1100,24 @@ textarea {
     font-size: 1.6rem;
     font-weight: 700;
     font-style: italic;
+}
+
+@media screen and (max-width: 500px) {
+
+    .footer-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-wrapper ul li a{
+        font-size: 1.5rem;
+    }
+    
+    .footer h4{
+        font-size: 1.5rem;
+    }
+
 }
